@@ -1,4 +1,4 @@
-FROM ghcr.io/joryirving/alpine:rolling@sha256:7bc458290f433489d5e0e8403bf7508ad165f8fba1e28f684273a52c7346efb1
+FROM docker.io/library/alpine:3.20
 
 ARG TARGETPLATFORM
 ARG VERSION
