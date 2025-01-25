@@ -23,6 +23,10 @@ ENV \
 STOPSIGNAL SIGINT
 WORKDIR /app
 
+RUN addgroup --gid 568 kah \
+    && \
+    adduser --disabled-password -u 568 -G kah kah
+
 RUN \
     apk add --no-cache curl \
     && \
@@ -52,5 +56,5 @@ RUN \
 
 USER kah
 
-COPY ./apps/kapowarr/entrypoint.sh /entrypoint.sh
+#COPY ./apps/kapowarr/entrypoint.sh /entrypoint.sh
 CMD ["/entrypoint.sh"]
