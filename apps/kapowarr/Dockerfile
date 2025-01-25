@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.20
+FROM docker.io/library/alpine:3.21
 
 ARG TARGETPLATFORM
 ARG VERSION
@@ -24,6 +24,8 @@ STOPSIGNAL SIGINT
 WORKDIR /app
 
 RUN \
+    apk add --no-cache curl \
+    && \
     curl -fsSL "https://github.com/Casvt/Kapowarr/archive/${VERSION}.tar.gz" | tar xzf - -C /app --strip-components 1 \
     && \
     echo "${VERSION}" > /app/version.txt \
