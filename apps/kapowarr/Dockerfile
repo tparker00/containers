@@ -28,7 +28,7 @@ RUN addgroup --gid 568 kah \
     adduser --disabled-password -u 568 -G kah kah
 
 RUN \
-    apk add --no-cache curl \
+    apk add --no-cache curl bash \
     && \
     curl -fsSL "https://github.com/Casvt/Kapowarr/archive/${VERSION}.tar.gz" | tar xzf - -C /app --strip-components 1 \
     && \
