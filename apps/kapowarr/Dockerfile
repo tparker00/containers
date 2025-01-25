@@ -56,5 +56,5 @@ RUN \
 
 USER kah
 
-#COPY ./apps/kapowarr/entrypoint.sh /entrypoint.sh
+COPY ./apps/kapowarr/entrypoint.sh /entrypoint.sh
 CMD ["/entrypoint.sh"]
